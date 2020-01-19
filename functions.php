@@ -89,3 +89,23 @@ function add_file_types_to_uploads($file_types){
 
 }
 add_filter('upload_mimes', 'add_file_types_to_uploads');
+
+function currentYear( $atts ){
+    return date('Y');
+}
+add_shortcode( 'year', 'currentYear' );
+
+function frontPagePosts() {
+	$q = new WP_Query(array(
+		'post_type' => 'post',
+        'posts_per_page' => 2
+    ));
+    while ($q->have_posts()) {
+		$q->the_post();
+		$buffer=$buffer.'<h1><a href="' . get_permalink() . '">' . get_the_title() . '</a></h1>' . '<p>' . get_the_excerpt() . '</p>' . get_the_post_thumbnail( get_the_ID(), 'full' );
+
+    }
+	wp_reset_postdata();
+	return $buffer;
+}
+add_shortcode( 'query', 'frontPagePosts' );
