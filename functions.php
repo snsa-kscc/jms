@@ -90,6 +90,14 @@ function add_file_types_to_uploads($file_types){
 }
 add_filter('upload_mimes', 'add_file_types_to_uploads');
 
+function include_cf_script() {
+    if( is_page( 'kontakt' ) || is_page( 'contact' ) ){
+    wp_enqueue_script('cf', get_stylesheet_directory_uri() . '/js/contact-form.js', array(), null, true);
+    }
+
+}
+add_action('wp_enqueue_scripts', 'include_cf_script');
+
 function currentYear( $atts ){
     return date('Y');
 }
