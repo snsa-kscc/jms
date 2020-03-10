@@ -7,9 +7,9 @@ if (have_posts()) :
 
 <main id="main" class="site-main" role="main">
 
-	<header class="page-header">
+	<!-- <header class="page-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
-	</header>
+	</header> -->
 
 	<div class="page-content">
 		<?php the_content(); ?>

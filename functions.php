@@ -35,6 +35,7 @@ add_action( 'comment_form_before', 'jms_comment_reply' );
 
 function jms_scripts_styles() {
 	wp_enqueue_style( 'jms-style', get_stylesheet_uri() );
+	wp_enqueue_script('jms-app', get_stylesheet_directory_uri() . '/js/app.js', array(), null, true);
 }
 add_action( 'wp_enqueue_scripts', 'jms_scripts_styles' );
 
@@ -75,11 +76,11 @@ function disable_emojis_remove_dns_prefetch( $urls, $relation_type ) {
    return $urls;
    }
 
-function my_deregister_scripts(){
+function deregister_embed_script(){
 	wp_deregister_script( 'wp-embed' );
   }
-  add_action( 'wp_footer', 'my_deregister_scripts' );
-
+  add_action( 'wp_footer', 'deregister_embed_script' );
+  
 function add_file_types_to_uploads($file_types){
 
     $new_filetypes = array();
@@ -90,13 +91,15 @@ function add_file_types_to_uploads($file_types){
 }
 add_filter('upload_mimes', 'add_file_types_to_uploads');
 
-function include_cf_script() {
-    if( is_page( 'kontakt' ) || is_page( 'contact' ) ){
-    wp_enqueue_script('cf', get_stylesheet_directory_uri() . '/js/contact-form.js', array(), null, true);
+function include_contact_scripts() {
+    if( is_page( 'kontakt' ) || is_page( 'contact' ) || is_page( 'iletisim' ) ){
+	wp_enqueue_style( 'mapbox', 'https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css' );
+	wp_enqueue_script('mapbox-js', 'https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js', array(), null, true);
+	wp_enqueue_script('cf', get_stylesheet_directory_uri() . '/js/contact-form.js', array(), null, true);
     }
 
 }
-add_action('wp_enqueue_scripts', 'include_cf_script');
+add_action('wp_enqueue_scripts', 'include_contact_scripts');
 
 function currentYear( $atts ){
     return date('Y');

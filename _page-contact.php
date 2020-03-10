@@ -26,6 +26,10 @@ if (have_posts()) :
 	</div>
 	<div class="form">
         <form enctype="application/x-www-form-urlencoded;" id="contact-form" class="form-horizontal" role="form" method="post">
+            <label class="ohnomedeni" for="name"></label>
+            <input class="ohnomedeni" id="ohnomedeni" autocomplete="off" type="text" id="name" name="name" placeholder="Your name here">
+            <label class="ohnomedeni" for="email"></label>
+            <input class="ohnomedeni" id="ohnomedenimoj" autocomplete="off" type="email" id="email" name="email" placeholder="Your e-mail here">
             <div class="form-group" id="name-field">
                 <label for="form-name" class="form-name"><?php echo $config->get('fields.name'); ?></label>
                 <div class="col-lg-10">
