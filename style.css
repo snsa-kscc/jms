@@ -4,9 +4,7 @@
 	Theme URI:			https://jms.hr/
 	Author:				dvasadva d.o.o.
 	Author URI:			https://dvasadva.com/
-	Version:			1.1.2
-	Requires at least:	4.9
-	Tested up to:		5.1
+	Version:			1.0.0
 	License:			GNU General Public License v3 or later.
 	License URI:		https://www.gnu.org/licenses/gpl-3.0.html
 	Tags:				custom-logo, one-column, two-columns, translation-ready
@@ -717,31 +715,41 @@ nav img {
 .page-id-12 .wp-block-cover__inner-container,
 .page-id-13 .wp-block-cover__inner-container,
 .page-id-26 .wp-block-cover__inner-container,
+.page-id-27 .wp-block-cover__inner-container,
 .page-id-170 .wp-block-cover__inner-container,
 .page-id-171 .wp-block-cover__inner-container {
   justify-content: flex-end;
 }
 
-.privacy-policy .page-content {
+.privacy-policy .page-content,
+.single .page-content {
   margin: 20rem 30rem 6rem;
 }
 
 h1,
 h2 {
   margin: 6rem 0 3rem;
+  line-height: 5rem;
+}
+
+.single h3 {
+  margin: 1.5em;
 }
 
 @media screen and (max-width: 1024px) {
-  .privacy-policy .page-content {
+  .privacy-policy .page-content,
+  .single .page-content {
     margin: 20rem 15rem 6rem;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .privacy-policy .page-content {
+  .privacy-policy .page-content,
+  .single .page-content {
     margin: 13rem 5rem 6rem;
   }
-  .privacy-policy .page-content h1 {
+  .privacy-policy .page-content h1,
+  .single .page-content h1 {
     line-height: 5rem;
   }
 }
@@ -756,4 +764,15 @@ h2 {
 }
 .elementor-flip-box {
   hyphens: auto;
+}
+
+@media screen and (max-width: 767px) {
+  .page-id-26 .elementor-posts .elementor-post,
+  .page-id-27 .elementor-posts .elementor-post {
+    display: block;
+  }
+}
+
+.wp-block-image img {
+  height: auto;
 }

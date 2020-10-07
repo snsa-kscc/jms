@@ -1,5 +1,5 @@
 mapboxgl.accessToken =
-  "pk.eyJ1Ijoic25zYS1rc2NjIiwiYSI6ImNqcmRkNG1tZjB0dDc0NG1yY216bTN1MnQifQ.Jn1K5PLN6ikUANVlLC30tg";
+  "pk.eyJ1IjoiamFzYXJhZ2ljbWFtdXRzdG9qYW4iLCJhIjoiY2s3eDM4amZ0MDZ3dDNmcHAwYm1qY3hiNyJ9.koVcTGBJNWJckt2YuPI40g";
 let map = new mapboxgl.Map({
   container: "mapbox",
   style: "mapbox://styles/mapbox/light-v10",

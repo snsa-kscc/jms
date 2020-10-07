@@ -35,23 +35,18 @@ if (typeof jQuery !== "undefined") {
   tabToggle = wrapper.find(".tab-toggle");
 
   function openTab() {
-    let content = jQuery(this)
-        .parent()
-        .next(".content"),
+    let content = jQuery(this).parent().next(".content"),
       activeItems = wrapper.find(".active");
 
     if (!jQuery(this).hasClass("active")) {
-      jQuery(this)
-        .add(content)
-        .add(activeItems)
-        .toggleClass("active");
+      jQuery(this).add(content).add(activeItems).toggleClass("active");
       wrapper.css("min-height", content.outerHeight());
     }
   }
 
   tabToggle.on("click", openTab);
 
-  window.onload = function() {
+  window.onload = function () {
     tabToggle.first().trigger("click");
   };
 }
@@ -60,11 +55,11 @@ const observableItems = document.querySelectorAll(".hero-paragraph");
 
 const options = {
   threshold: 0,
-  rootMargin: "0px 0px -30% 0px"
+  rootMargin: "0px 0px -30% 0px",
 };
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
     if (entry.intersectionRatio > 0) {
       entry.target.classList.add("animation-once");
       observer.unobserve(entry.target);
@@ -72,7 +67,7 @@ const observer = new IntersectionObserver(entries => {
   });
 }, options);
 
-observableItems.forEach(item => {
+observableItems.forEach((item) => {
   observer.observe(item);
 });
 
@@ -95,8 +90,9 @@ let navSlide = () => {
       if (link.style.animation) {
         link.style.animation = "";
       } else {
-        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 +
-          1.1}s`;
+        link.style.animation = `navLinkFade 0.5s ease forwards ${
+          index / 7 + 1.1
+        }s`;
       }
     });
     burger.classList.toggle("toggle");
