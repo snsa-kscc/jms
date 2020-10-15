@@ -35,7 +35,7 @@ add_action( 'comment_form_before', 'jms_comment_reply' );
 
 function jms_scripts_styles() {
 	wp_enqueue_style( 'jms-style', get_stylesheet_uri() );
-	wp_enqueue_script('jms-app', get_stylesheet_directory_uri() . '/js/app.js', array(), null, true);
+	wp_enqueue_script('jms-app', get_stylesheet_directory_uri() . '/js/app.js', array('jquery'), null, true);
 }
 add_action( 'wp_enqueue_scripts', 'jms_scripts_styles' );
 
