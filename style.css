@@ -736,6 +736,15 @@ h2 {
   margin: 1.5em;
 }
 
+.single .page-content a {
+	color: #703cff;
+}
+
+.single .page-content ol {
+	margin-left: 2em;
+  margin-bottom: 1em;
+}
+
 @media screen and (max-width: 1024px) {
   .privacy-policy .page-content,
   .single .page-content {
